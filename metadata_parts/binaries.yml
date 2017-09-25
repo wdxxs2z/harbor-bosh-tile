@@ -1,0 +1,30 @@
+---
+name: harbor-service
+product_version: '0.1.2'
+metadata_version: '1.8'
+stemcell_criteria:
+  os: ubuntu-trusty
+  version: '3421.11'
+  enable_patch_security_updates: true
+
+releases:
+- name: cf-mysql
+  version: '36'
+  file: cf-mysql-release-36.tgz
+  md5: b2d976fcc97674a41fa6b2c5982c62bc
+- name: docker-registry
+  version: '1'
+  file: docker-registry-1.tgz
+  md5: 73cc7f808ce08c3ef8263d68895fd8ed
+- name: harbor
+  version: '0+dev.2'
+  file: harbor.0+dev.2.tgz
+  md5: 579ce4d63bd53efdf4bda484073aeceb
+- name: cf-routing
+  version: '0.159.0'
+  file: cf-routing-release-0.159.0.tgz
+  md5: c99f3941333724852632c9e2cac262a7
+
+provides_product_versions:
+- name: harbor-service
+  version: '0.1.0'
