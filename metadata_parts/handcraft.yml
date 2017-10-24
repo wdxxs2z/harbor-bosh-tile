@@ -26,6 +26,22 @@ form_types:
   - reference: ".properties.harbor_ssl_rsa_certificate"
     label: harbor certificate
     description: harbor self cert_pem
+- name: UAA Configration
+  label: UAA Configration
+  description: uaa config
+  property_inputs:
+  - reference: ".properties.auth_mode"
+    label: auth mode
+    description: auth mode select
+  - reference: ".properties.uaa_endpoint_url"
+    label: uaa endpoint url
+    description: The uaa endpoint URL (e.g. https://uaa.mydomain.com)
+  - reference: ".properties.uaa_cltent_id"
+    label: uaa client id
+    description: uaa client id
+  - reference: ".properties.uaa_client_secret"
+    label: uaa client secret
+    description: The uaa client secret
 - name: LDAP Configration
   label: LDAP Configration
   description: ldap config
@@ -351,7 +367,7 @@ job_types:
     adminserver:
       port: 8080
       key: (( .properties.harbor_adminservice_key.value ))
-      auth_mode: "db_auth"
+      auth_mode: (( .properties.auth_mode.value ))
       token_expiration: 1440
       verify_remote_cert: false
       external_url: (( .properties.harbor_external_url.value ))
@@ -359,6 +375,9 @@ job_types:
       reset: true
       self_registration: (( .properties.harbor_self_registration.value ))
       project_creation_restriction: (( .properties.harbor_project_creation_restriction.value ))
+      uaa_endpoint_url: (( .properties.uaa_endpoint_url.value ))
+      uaa_client_id: (( .properties.uaa_client_id.value ))
+      uaa_client_secret: (( .properties.uaa_client_secret.value ))
     jobservice:
       port: 8081
       secret: (( harbor_jobservice_secret.password ))
@@ -366,6 +385,7 @@ job_types:
       port: 8082
       secret: (( harbor_ui_secret.password ))
       private_key: (( .properties.harbor_ssl_rsa_certificate.private_key_pem ))
+      uaa_ca_cert: (( $ops_manager.ca_certificate ))
     mysql:
       username: harbor
       password: (( .properties.mysql_harbor_password.value ))
@@ -526,4 +546,25 @@ property_blueprints:
   type: string
   optional: true
   configurable: true
-
+- name: auth_mode
+  type: dropdown_select
+  default: db_auth 
+  configurable: true
+  optional: false
+  options:
+  - label: db_auth
+    name: db_auth
+  - label: uaa_auth
+    name: uaa_auth
+- name: uaa_endpoint_url
+  type: string
+  optional: true
+  configurable: true
+- name: uaa_client_id
+  type: string
+  optional: true
+  configurable: true
+- name: uaa_client_secret
+  type: secret
+  optional: true
+  configurable: true
