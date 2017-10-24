@@ -1,6 +1,6 @@
 ---
 name: harbor-service
-product_version: '0.1.2'
+product_version: '0.1.18'
 metadata_version: '1.8'
 stemcell_criteria:
   os: ubuntu-trusty
@@ -17,13 +17,9 @@ releases:
   file: docker-registry-1.tgz
   md5: 73cc7f808ce08c3ef8263d68895fd8ed
 - name: harbor
-  version: '0+dev.2'
-  file: harbor.0+dev.2.tgz
-  md5: 579ce4d63bd53efdf4bda484073aeceb
-- name: cf-routing
-  version: '0.159.0'
-  file: cf-routing-release-0.159.0.tgz
-  md5: c99f3941333724852632c9e2cac262a7
+  version: '0+dev.12'
+  file: harbor-0+dev.12.tgz
+  md5: 89ceb559bb1002bdc5e579cdf445a55a
 
 provides_product_versions:
 - name: harbor-service
