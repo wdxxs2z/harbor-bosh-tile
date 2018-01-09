@@ -1,0 +1,588 @@
+label: Harbor Registry Service
+description: harbor service
+icon_image: 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
+minimum_version_for_upgrade: 0.1.0
+rank: 50
+form_types:
+- name: Harbor Configration
+  label: Harbor Configration
+  description: harbor config
+  property_inputs:
+  - reference: ".properties.harbor_external_url"
+    label: harbor external url
+    description: 'harbor external url such as: http://harbor-registry.domain.io:80'
+  - reference: ".properties.mysql_harbor_password"
+    label: harbor mysql password
+    description: 'harbor mysql password'
+  - reference: ".properties.harbor_adminservice_key"
+    label: harbor admin server key
+    description: 'harbor admin server key,such as:hespc2wZyu2wIHS'
+  - reference: ".properties.harbor_self_registration"
+    label: harbor self registration
+    description: 'harbor admin server key,default true.'
+  - reference: ".properties.harbor_project_creation_restriction"
+    label: harbor project creation restriction
+    description: 'harbor admin server key,default everyone.'
+  - reference: ".properties.harbor_ssl_rsa_certificate"
+    label: harbor certificate
+    description: harbor self cert_pem
+  - reference: ".properties.harbor_init_sql"
+    label: harbor sql content
+    description: harbor sql content
+- name: UAA Configration
+  label: UAA Configration(Not Ready)
+  description: uaa config
+  property_inputs:
+  - reference: ".properties.auth_mode"
+    label: auth mode
+    description: auth mode select
+  - reference: ".properties.uaa_endpoint_url"
+    label: uaa endpoint url
+    description: The uaa endpoint URL (e.g. https://uaa.mydomain.com)
+  - reference: ".properties.uaa_client_id"
+    label: uaa client id
+    description: uaa client id
+  - reference: ".properties.uaa_client_secret"
+    label: uaa client secret
+    description: The uaa client secret
+- name: LDAP Configration
+  label: LDAP Configration
+  description: ldap config
+  property_inputs:
+  - reference: ".properties.ldap_url"
+    label: ldap endpoint url
+    description: The LDAP endpoint URL (e.g. ldaps://ldap.mydomain.com)
+  - reference: ".properties.ldap_search_dn"
+    label: ldap search dn
+    description: The DN of a user who has the permission to search an LDAP/AD server
+      (e.g. uid=admin,ou=people,dc=mydomain,dc=com)
+  - reference: ".properties.ldap_search_pwd"
+    label: ldap search pwd
+    description: The password of the user specified by search_dn
+  - reference: ".properties.ldap_base_dn"
+    label: ldap base dn
+    description: The base DN to look up a user, e.g. ou=people,dc=mydomain,dc=com
+  - reference: ".properties.ldap_filter"
+    label: ldap filter
+    description: The search filter for looking up a user, e.g. (objectClass=person)
+  - reference: ".properties.ldap_uid"
+    label: ldap uid
+    description: The attribute used to match a user during a LDAP search, it could
+      be uid, cn, email or other attributes
+  - reference: ".properties.ldap_scope"
+    label: ldap scope
+    description: The scope to search for a user, 1-LDAP_SCOPE_BASE, 2-LDAP_SCOPE_ONELEVEL,
+      3-LDAP_SCOPE_SUBTREE. Default is 3
+  - reference: ".properties.ldap_timeout"
+    label: ldap timeout
+    description: The LDAP timeout
+- name: Email Configration
+  label: Email Configration
+  description: Email config
+  property_inputs:
+  - reference: ".properties.ldap_email_server"
+    label: ldap email server
+    description: SMTP server
+  - reference: ".properties.ldap_email_port"
+    label: ldap email port
+    description: SMTP server port
+  - reference: ".properties.ldap_email_username"
+    label: ldap email username
+    description: SMTP server username
+  - reference: ".properties.ldap_email_password"
+    label: ldap email password
+    description: SMTP server password
+  - reference: ".properties.ldap_email_ssl"
+    label: ldap email ssl
+    description: Tf your SMTP server requires SSL, but does not support STARTTLS,
+      then you should set this property to true
+  - reference: ".properties.ldap_email_from"
+    label: ldap email from
+    description: SMTP From address
+job_types:
+- name: mysql
+  label: mysql
+  resource_label: mysql
+  description: mysql
+  templates:
+  - name: mysql
+    release: cf-mysql
+  max_in_flight: 1
+  dynamic_ip: 0
+  static_ip: 1
+  single_az_only: true
+  instance_definition:
+    name: instances
+    type: integer
+    default: 1
+    configurable: true
+    constraints:
+      min: 0
+      max: 6
+  resource_definitions:
+  - name: ram
+    label: RAM
+    type: integer
+    configurable: true
+    default: 4096
+    constraints:
+      min: 1024
+  - name: ephemeral_disk
+    type: integer
+    label: Ephemeral Disk
+    configurable: true
+    default: 1024
+  - name: persistent_disk
+    type: integer
+    label: Persistent Disk
+    configurable: true
+    default: 16384
+    constraints:
+      min: 4096
+  - name: cpu
+    type: integer
+    label: CPU
+    configurable: true
+    default: 2
+    constraints:
+      min: 1
+      power_of_two: true
+  property_blueprints:
+  - name: vm_credentials
+    type: salted_credentials
+    label: VM credentials
+    default:
+      identity: vcap
+  - name: cf_mysql_admin_credentials
+    type: simple_credentials
+    label: mysql admin credential
+    configurable: false
+    default:
+      identity: admin
+  - name: cf_mysql_cluster_health_credentials
+    type: simple_credentials
+    label: mysql cluster health credential
+    configurable: false
+    default:
+      identity: admin
+  - name: cf_mysql_galera_healthcheck_db_credentials
+    type: simple_credentials
+    label: mysql galera healthcheck db credential
+    configurable: false
+    default:
+      identity: admin
+  - name: cf_mysql_galera_healthcheck_endpoint_credentials
+    type: simple_credentials
+    label: mysql galera healthcheck endpoint credential
+    configurable: false
+    default:
+      identity: admin
+  manifest: |
+    cf_mysql:
+      mysql:
+        admin_password: (( cf_mysql_admin_credentials.password ))
+        cluster_health:
+          password: (( cf_mysql_cluster_health_credentials.password ))
+        galera_healthcheck:
+          db_password: (( cf_mysql_galera_healthcheck_db_credentials.password ))
+          endpoint_password: (( cf_mysql_galera_healthcheck_endpoint_credentials.password ))
+        seeded_databases:
+        - name: registry
+          username: harbor
+          password: (( .properties.mysql_harbor_password.value ))
+- name: registry
+  label: registry
+  resource_label: registry
+  description: docker registry
+  templates:
+  - consumes: |
+      auth_token: {from: auth_token}
+      notification: {from: notification}
+      health_http: nil
+      health_tcp: {from: health_tcp}
+    name: registry
+    release: docker-registry
+  max_in_flight: 1
+  dynamic_ip: 0
+  static_ip: 1
+  single_az_only: true
+  instance_definition:
+    name: instances
+    type: integer
+    default: 1
+    configurable: true
+    constraints:
+      min: 0
+      max: 6
+  resource_definitions:
+  - name: ram
+    label: RAM
+    type: integer
+    configurable: true
+    default: 4096
+    constraints:
+      min: 1024
+  - name: ephemeral_disk
+    type: integer
+    label: Ephemeral Disk
+    configurable: true
+    default: 1024
+  - name: persistent_disk
+    type: integer
+    label: Persistent Disk
+    configurable: true
+    default: 16384
+    constraints:
+      min: 4096
+  - name: cpu
+    type: integer
+    label: CPU
+    configurable: true
+    default: 2
+    constraints:
+      min: 1
+      power_of_two: true
+  property_blueprints:
+  - name: vm_credentials
+    type: salted_credentials
+    label: VM credentials
+    default:
+      identity: vcap
+  - name: docker_registry_auth_credentials
+    type: simple_credentials
+    label: docker registry auth credential
+    configurable: false
+    default:
+      identity: admin
+  - name: docker_registry_http_credentials
+    type: simple_credentials
+    label: docker registry http credential
+    configurable: false
+    default:
+      identity: admin
+  manifest: |
+    storage:
+      driver: filesystem
+      delete:
+        enabled: true
+    auth:
+      token:
+        schema: http
+        port: 80
+        path: /service/token
+        service: harbor-registry
+        issuer: harbor-token-issuer
+        rootcertbundle: (( .properties.harbor_ssl_rsa_certificate.cert_pem ))
+    http:
+      listen_addr: 0.0.0.0
+      secret: (( docker_registry_http_credentials.password))
+      headers:
+        X-Content-Type-Options: [nosniff]
+    health:
+      storagedriver:
+        enabled: true
+        interval: 10s
+        threshold: 3
+      tcp:
+        port: 80
+    notifications:
+      endpoint:
+        name: harbor
+        schema: http
+        port: 80
+        path: /service/notifications
+- name: harbor
+  label: harbor
+  resource_label: harbor
+  description: harbor
+  templates:
+  - name: load_datasource
+    release: load-datasource
+  - name: adminserver
+    release: harbor
+  - name: jobservice
+    release: harbor
+  - name: ui
+    release: harbor
+  max_in_flight: 1
+  dynamic_ip: 0
+  static_ip: 1
+  single_az_only: true
+  instance_definition:
+    name: instances
+    type: integer
+    default: 1
+    configurable: true
+    constraints:
+      min: 0
+      max: 9
+  resource_definitions:
+  - name: ram
+    label: RAM
+    type: integer
+    configurable: true
+    default: 8192
+    constraints:
+      min: 1024
+  - name: ephemeral_disk
+    type: integer
+    label: Ephemeral Disk
+    configurable: true
+    default: 1024
+  - name: persistent_disk
+    type: integer
+    label: Persistent Disk
+    configurable: true
+    default: 16384
+    constraints:
+      min: 4096
+  - name: cpu
+    type: integer
+    label: CPU
+    configurable: true
+    default: 2
+    constraints:
+      min: 1
+      power_of_two: true
+  property_blueprints:
+  - name: vm_credentials
+    type: salted_credentials
+    label: VM credentials
+    default:
+      identity: vcap
+  - name: harbor_initial_admin_credentials
+    type: simple_credentials
+    label: harbor initial admin credential
+    configurable: false
+    default:
+      identity: admin
+  - name: harbor_jobservice_secret
+    type: simple_credentials
+    label: harbor initial jobservice secret
+    configurable: false
+    default:
+      identity: jobservice
+  - name: harbor_ui_secret
+    type: simple_credentials
+    label: harbor initial ui secret
+    configurable: false
+    default:
+      identity: ui
+  manifest: |
+    load_datasource:
+      driver_class_name: com.mysql.jdbc.Driver
+      driver_name: mysql
+      database_hostname: (( .mysql.first_ip ))
+      database_port: 3306
+      database_name: registry
+      database_username: harbor
+      database_password: (( .properties.mysql_harbor_password.value ))
+      sql: "(( .properties.harbor_init_sql.value ))"
+    adminserver:
+      port: 8080
+      key: (( .properties.harbor_adminservice_key.value ))
+      auth_mode: (( .properties.auth_mode.value ))
+      token_expiration: 1440
+      verify_remote_cert: false
+      external_url: (( .properties.harbor_external_url.value ))
+      initial_admin_password: (( harbor_initial_admin_credentials.password ))
+      reset: true
+      self_registration: (( .properties.harbor_self_registration.value ))
+      project_creation_restriction: (( .properties.harbor_project_creation_restriction.value ))
+      uaa_endpoint_url: (( .properties.uaa_endpoint_url.value ))
+      uaa_client_id: (( .properties.uaa_client_id.value ))
+      uaa_client_secret: (( .properties.uaa_client_secret.value ))
+    jobservice:
+      port: 8081
+      secret: (( harbor_jobservice_secret.password ))
+    ui:
+      port: 8082
+      secret: (( harbor_ui_secret.password ))
+      private_key: (( .properties.harbor_ssl_rsa_certificate.private_key_pem ))
+      uaa_ca_cert: (( $ops_manager.ca_certificate ))
+    mysql:
+      username: harbor
+      password: (( .properties.mysql_harbor_password.value ))
+      port: 3306
+      dbname: registry
+    ldap:
+      url: (( .properties.ldap_url.value ))
+      search_dn: (( .properties.ldap_search_dn.value ))
+      search_pwd: (( .properties.ldap_search_pwd.value ))
+      base_dn: (( .properties.ldap_base_dn.value ))
+      filter: (( .properties.ldap_filter.value ))
+      uid: (( .properties.ldap_uid.value ))
+      scope: (( .properties.ldap_scope.value ))
+      timeout: (( .properties.ldap_timeout.value ))
+    email:
+      server: (( .properties.ldap_email_server.value ))
+      port: (( .properties.ldap_email_port.value ))
+      username: (( .properties.ldap_email_username.value ))
+      password: (( .properties.ldap_email_password.value ))
+      ssl: (( .properties.ldap_email_ssl.value ))
+      from: (( .properties.ldap_email_from.value ))
+- name: nginx
+  label: nginx
+  resource_label: nginx
+  description: nginx
+  templates:
+  - name: nginx
+    release: harbor
+  max_in_flight: 1
+  dynamic_ip: 0
+  static_ip: 1
+  single_az_only: true
+  instance_definition:
+    name: instances
+    type: integer
+    default: 1
+    configurable: true
+    constraints:
+      min: 0
+      max: 9
+  resource_definitions:
+  - name: ram
+    label: RAM
+    type: integer
+    configurable: true
+    default: 8192
+    constraints:
+      min: 1024
+  - name: ephemeral_disk
+    type: integer
+    label: Ephemeral Disk
+    configurable: true
+    default: 1024
+  - name: persistent_disk
+    type: integer
+    label: Persistent Disk
+    configurable: true
+    default: 16384
+    constraints:
+      min: 4096
+  - name: cpu
+    type: integer
+    label: CPU
+    configurable: true
+    default: 2
+    constraints:
+      min: 1
+      power_of_two: true
+  property_blueprints:
+  - name: vm_credentials
+    type: salted_credentials
+    label: VM credentials
+    default:
+      identity: vcap
+  manifest: |
+    ssl_cert: (( .properties.harbor_ssl_rsa_certificate.cert_pem ))
+    ssl_key: (( .properties.harbor_ssl_rsa_certificate.private_key_pem ))
+property_blueprints:
+- name: harbor_ssl_rsa_certificate
+  configurable: true
+  type: rsa_cert_credentials
+- name: mysql_harbor_password
+  type: secret
+  configurable: true
+- name: harbor_adminservice_key
+  type: secret
+  configurable: true
+- name: harbor_external_url
+  type: string
+  configurable: true
+- name: harbor_self_registration
+  type: boolean
+  configurable: true
+  default: true
+- name: harbor_project_creation_restriction
+  type: dropdown_select
+  default: everyone
+  configurable: true
+  optional: false
+  options:
+  - label: everyone
+    name: everyone
+  - label: adminonly
+    name: adminonly
+- name: ldap_url
+  type: string
+  optional: true
+  configurable: true
+- name: ldap_search_dn
+  type: string
+  optional: true
+  configurable: true
+- name: ldap_search_pwd
+  type: string
+  optional: true
+  configurable: true
+- name: ldap_base_dn
+  type: string
+  optional: true
+  configurable: true
+- name: ldap_filter
+  type: string
+  optional: true
+  configurable: true
+- name: ldap_uid
+  type: string
+  optional: true
+  configurable: true
+- name: ldap_scope
+  type: string
+  optional: true
+  configurable: true
+- name: ldap_timeout
+  type: string
+  optional: true
+  configurable: true
+- name: ldap_email_server
+  type: string
+  optional: true
+  configurable: true
+- name: ldap_email_port
+  type: string
+  optional: true
+  configurable: true
+- name: ldap_email_username
+  type: string
+  optional: true
+  configurable: true
+- name: ldap_email_password
+  type: string
+  optional: true
+  configurable: true
+- name: ldap_email_ssl
+  type: boolean
+  default: false
+  configurable: true
+- name: ldap_email_from
+  type: string
+  optional: true
+  configurable: true
+- name: auth_mode
+  type: dropdown_select
+  default: db_auth 
+  configurable: true
+  optional: false
+  options:
+  - label: db_auth
+    name: db_auth
+  - label: uaa_auth
+    name: uaa_auth
+- name: uaa_endpoint_url
+  type: string
+  default: https://uaa.domain.io
+  configurable: true
+- name: uaa_client_id
+  type: string
+  default: cf
+  configurable: true
+- name: uaa_client_secret
+  type: secret
+  default: ""
+  configurable: true
+- name: harbor_init_sql
+  type: string
+  default: "drop database if exists registry; create database registry charset = utf8; use registry; create table access ( access_id int NOT NULL AUTO_INCREMENT, access_code char(1), comment varchar (30), primary key (access_id) ); insert into access (access_code, comment) values ('M', 'Management access for project'), ('R', 'Read access for project'), ('W', 'Write access for project'), ('D', 'Delete access for project'), ('S', 'Search access for project'); create table role ( role_id int NOT NULL AUTO_INCREMENT, role_mask int DEFAULT 0 NOT NULL, role_code varchar(20), name varchar (20), primary key (role_id) ); insert into role (role_code, name) values ('MDRWS', 'projectAdmin'), ('RWS', 'developer'), ('RS', 'guest'); create table user ( user_id int NOT NULL AUTO_INCREMENT, username varchar(255), email varchar(255), password varchar(40) NOT NULL, realname varchar (255) NOT NULL, comment varchar (30), deleted tinyint (1) DEFAULT 0 NOT NULL, reset_uuid varchar(40) DEFAULT NULL, salt varchar(40) DEFAULT NULL, sysadmin_flag tinyint (1), creation_time timestamp, update_time timestamp, primary key (user_id), UNIQUE (username), UNIQUE (email) ); insert into user (username, email, password, realname, comment, deleted, sysadmin_flag, creation_time, update_time) values ('admin', 'admin@example.com', '', 'system admin', 'admin user',0, 1, NOW(), NOW()), ('anonymous', 'anonymous@example.com', '', 'anonymous user', 'anonymous user', 1, 0, NOW(), NOW()); create table project ( project_id int NOT NULL AUTO_INCREMENT, owner_id int NOT NULL, name varchar (41) NOT NULL, creation_time timestamp, update_time timestamp, deleted tinyint (1) DEFAULT 0 NOT NULL, public tinyint (1) DEFAULT 0 NOT NULL, primary key (project_id), FOREIGN KEY (owner_id) REFERENCES user(user_id), UNIQUE (name) ); insert into project (owner_id, name, creation_time, update_time, public) values (1, 'library', NOW(), NOW(), 1); create table project_member ( project_id int NOT NULL, user_id int NOT NULL, role int NOT NULL, creation_time timestamp, update_time timestamp, PRIMARY KEY (project_id, user_id), FOREIGN KEY (role) REFERENCES role(role_id), FOREIGN KEY (project_id) REFERENCES project(project_id), FOREIGN KEY (user_id) REFERENCES user(user_id) ); insert into project_member (project_id, user_id, role, creation_time, update_time) values (1, 1, 1, NOW(), NOW()); create table access_log ( log_id int NOT NULL AUTO_INCREMENT, username varchar (255) NOT NULL, project_id int NOT NULL, repo_name varchar (256), repo_tag varchar (128), GUID varchar(64), operation varchar(20) NOT NULL, op_time timestamp, primary key (log_id), INDEX pid_optime (project_id, op_time) ); create table repository ( repository_id int NOT NULL AUTO_INCREMENT, name varchar(255) NOT NULL, project_id int NOT NULL, description text, pull_count int DEFAULT 0 NOT NULL, star_count int DEFAULT 0 NOT NULL, creation_time timestamp default CURRENT_TIMESTAMP, update_time timestamp default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP, primary key (repository_id), UNIQUE (name) ); create table replication_policy ( id int NOT NULL AUTO_INCREMENT, name varchar(256), project_id int NOT NULL, target_id int NOT NULL, enabled tinyint(1) NOT NULL DEFAULT 1, description text, deleted tinyint (1) DEFAULT 0 NOT NULL, cron_str varchar(256), start_time timestamp NULL, creation_time timestamp default CURRENT_TIMESTAMP, update_time timestamp default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP, PRIMARY KEY (id) ); create table replication_target ( id int NOT NULL AUTO_INCREMENT, name varchar(64), url varchar(64), username varchar(255), password varchar(128), target_type tinyint(1) NOT NULL DEFAULT 0, creation_time timestamp default CURRENT_TIMESTAMP, update_time timestamp default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP, PRIMARY KEY (id) ); create table replication_job ( id int NOT NULL AUTO_INCREMENT, status varchar(64) NOT NULL, policy_id int NOT NULL, repository varchar(256) NOT NULL, operation varchar(64) NOT NULL, tags varchar(16384), creation_time timestamp default CURRENT_TIMESTAMP, update_time timestamp default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP, PRIMARY KEY (id), INDEX policy (policy_id), INDEX poid_uptime (policy_id, update_time) ); create table img_scan_job ( id int NOT NULL AUTO_INCREMENT, status varchar(64) NOT NULL, repository varchar(256) NOT NULL, tag varchar(128) NOT NULL, digest varchar(128), creation_time timestamp default CURRENT_TIMESTAMP, update_time timestamp default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP, PRIMARY KEY (id) ); create table img_scan_overview ( id int NOT NULL AUTO_INCREMENT, image_digest varchar(128) NOT NULL, scan_job_id int NOT NULL, severity int NOT NULL default 0, components_overview varchar(2048), details_key varchar(128), creation_time timestamp default CURRENT_TIMESTAMP, update_time timestamp default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP, PRIMARY KEY(id), UNIQUE(image_digest) ); create table clair_vuln_timestamp ( id int NOT NULL AUTO_INCREMENT, namespace varchar(128) NOT NULL, last_update timestamp NOT NULL, PRIMARY KEY(id), UNIQUE(namespace) ); create table properties ( k varchar(64) NOT NULL, v varchar(128) NOT NULL, primary key (k) ); CREATE TABLE IF NOT EXISTS `alembic_version` ( `version_num` varchar(32) NOT NULL ) ENGINE=InnoDB DEFAULT CHARSET=utf8; insert into alembic_version values ('1.2.0');"
+  configurable: true
