@@ -1,6 +1,6 @@
 ---
 name: harbor-service
-product_version: '0.1.26'
+product_version: '0.1.27'
 metadata_version: '1.8'
 stemcell_criteria:
   os: ubuntu-trusty
@@ -17,13 +17,9 @@ releases:
   file: docker-registry-1.tgz
   md5: 73cc7f808ce08c3ef8263d68895fd8ed
 - name: harbor
-  version: '0+dev.15'
-  file: harbor-0+dev.15.tgz
-  md5: a6734e4f5dcd6fa80709c7da375817a5
-- name: load-datasource
-  version: '1+dev.2'
-  file: load-datasource-1+dev.2.tgz
-  md5: 76c1f810524e41d6237b1e4cf925763b
+  version: '0+dev.16'
+  file: harbor-0+dev.16.tgz
+  md5: 142f31c8f7fa3f41456463fa974d83eb
 
 provides_product_versions:
 - name: harbor-service
